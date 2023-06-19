@@ -8,27 +8,25 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     />
     <title>운세보는 챗도지</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1></h1>
-    <button onclick="getFortune()">요청하기</button>
-    <script>
-      async function getFortune() {
-        try {
-          const response = await fetch("http://localhost:3000/fortuneTell", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ name: "john" }),
-          });
-          const data = await response.json();
-          console.log(data);
-          return data;
-        } catch (error) {
-          console.log(error);
-        }
-      }
-    </script>
+    <div class="chat-container">
+      <div class="chat-box">
+        <div class="chat-message">
+            <p class="assistant">
+              안녕하세요. 챗도지입니다. <br />
+              오늘의 운세를 알려드릴게요.
+            </p>
+        </div>
+        <div class="chat-input">
+            <input
+                type="text"
+                placeholder="메시지를 입력하세요."
+            />
+            <button id="send-button">보내기</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
