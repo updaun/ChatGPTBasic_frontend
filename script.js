@@ -7,7 +7,7 @@ const chatBox = document.querySelector('.chat-box');
         if (!chatInput.value.trim()) return;
 
         const chatMessage = document.createElement('div');
-        chatMessage.classList.add('chat-message');
+        chatMessage.classList.add('chat-message', 'user');
         chatMessage.innerHTML = `<p>${chatInput.value}</p>`;
         chatBox.appendChild(chatMessage);
 
@@ -27,7 +27,7 @@ const chatBox = document.querySelector('.chat-box');
         const data = await response.json();
 
         const astrologerMessage = document.createElement('div');
-        astrologerMessage.classList.add('chat-message');
+        astrologerMessage.classList.add('chat-message', 'bot');
         astrologerMessage.innerHTML = `<p class='assistant'>${data.assistant}</p>`;
         chatBox.appendChild(astrologerMessage);
     };
