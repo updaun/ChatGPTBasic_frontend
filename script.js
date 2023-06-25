@@ -1,6 +1,19 @@
 const chatBox = document.querySelector('.chat-box');
 let userMessages = [];
 let assistantMessages = [];
+let myDateTime = '';
+
+    function start() {
+        const date = document.getElementById('date').value;
+        const hour = document.getElementById('hour').value;
+        if (date === "") {
+            alert("생년월일을 입력해주세요.");
+            return;
+        }
+        myDateTime = date + hour;
+        document.getElementById('intro').style.display = 'none';
+        document.getElementById('intro').style.display = 'block';
+    }
 
     const sendMessage = async () => {
         const chatInput = document.querySelector('.chat-input input');
@@ -25,6 +38,7 @@ let assistantMessages = [];
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                myDateTime: myDateTime,
                 userMessages: userMessages,
                 assistantMessages: assistantMessages,
             })
