@@ -3,6 +3,16 @@ let userMessages = [];
 let assistantMessages = [];
 let myDateTime = '';
 
+    function updateScroll() {
+        var chatBox = document.querySelector('.chat-box');
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function spinner() {
+        document.getElementById('loader').style.display = 'block';
+        updateScroll();
+    }
+
     function start() {
         const date = document.getElementById('date').value;
         const hour = document.getElementById('hour').value;
@@ -12,7 +22,7 @@ let myDateTime = '';
         }
         myDateTime = date + hour;
         document.getElementById('intro').style.display = 'none';
-        document.getElementById('intro').style.display = 'block';
+        document.getElementById('chat').style.display = 'block';
     }
 
     const sendMessage = async () => {
@@ -28,6 +38,16 @@ let myDateTime = '';
 
         //userMessages 메세지 추가
         userMessages.push(chatInput.value);
+
+        const astrologerMessage = document.createElement('div');
+        astrologerMessage.classList.add('chat-message', 'bot');
+        astrologerMessage.innerHTML = `
+            <div class="loader" id="loader" style="display: block;" >
+                <i class="fa fa-spinner fa-spin" style="display: inline-block; vertical-align: middle"></i>
+                <p style="display: inline-block; vertical-align: middle">답변을 작성중입니다.</p>
+            </div>
+        `;
+        chatBox.appendChild(astrologerMessage);
 
         const message = chatInput.value;
         chatInput.value = '';
@@ -45,12 +65,10 @@ let myDateTime = '';
         });
 
         const data = await response.json();
+        document.getElementById('loader').style.display = 'none';
 
         //assistantMessages 메세지 추가
         assistantMessages.push(data.assistant);
-
-        const astrologerMessage = document.createElement('div');
-        astrologerMessage.classList.add('chat-message', 'bot');
         astrologerMessage.innerHTML = `<p class='assistant'>${data.assistant}</p>`;
         chatBox.appendChild(astrologerMessage);
     };
@@ -62,5 +80,7 @@ let myDateTime = '';
         if (e.key === 'Enter') {
             e.preventDefault();
             sendMessage();
+            spinner();
+            
         }
     });

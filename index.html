@@ -9,13 +9,20 @@
     />
     <title>운세보는 챗도지</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div id="intro" class="intro-container">
-      <h1> 운세를 알려드립니다. </h1>
+      <h1>운세를 알려드립니다.</h1>
       <img src="doge.png" alt="chatdoge" />
       <label for="date">생년월일</label>
-      <input id="date" type="date">
+      <input id="date" type="date" />
       <label for="hour">태어난 시간</label>
       <select id="hour" name="hour">
         <option value="">모름</option>
@@ -43,26 +50,25 @@
         <option value="21">21</option>
         <option value="22">22</option>
         <option value="23">23</option>
-    </select>
-    <button onclick="start()">오늘의 운세보기</button>
-
+      </select>
+      <button onclick="start()">오늘의 운세보기</button>
     </div>
-    <div id="chat" class="chat-container" style="display: none;">
+    <div id="chat" class="chat-container" style="display: none">
       <div class="chat-box">
         <div class="chat-message bot">
-            <p class="assistant">
-              안녕하세요. 챗도지입니다. <br />
-              오늘의 운세를 알려드릴게요.
-            </p>
+          <p class="assistant">
+            안녕하세요. 챗도지입니다. <br />
+            오늘의 운세를 알려드릴게요.
+          </p>
         </div>
+      </div>
+
+      <div class="chat-input">
+        <input type="text" placeholder="메시지를 입력하세요." />
+        <button id="send-button" onclick="spinner()">보내기</button>
+      </div>
     </div>
-    <div class="chat-input">
-        <input
-            type="text"
-            placeholder="메시지를 입력하세요."
-        />
-        <button id="send-button">보내기</button>
-    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

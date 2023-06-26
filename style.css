@@ -21,7 +21,7 @@ body {
     border-radius: 15px;
     margin-bottom: 30px;
     overflow-y: scroll;
-    height: 300px;
+    height: 60vh;
     box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -110,4 +110,9 @@ body {
 .intro-container img {
     width: 50%;
     min-width: 300px;
+}
+
+#loader {
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
