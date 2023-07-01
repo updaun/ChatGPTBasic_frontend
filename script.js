@@ -54,7 +54,8 @@ let myDateTime = '';
         const message = chatInput.value;
         chatInput.value = '답변 중에는 입력할 수 없습니다. 잠시만 기다려주세요.';
 
-        const response = await fetch('http://localhost:3000/fortuneTell', {
+        // const response = await fetch('http://localhost:3000/fortuneTell', {
+        const response = await fetch('https://cricnbvfnfrjufijj6zc3kwbqe0tevih.lambda-url.ap-northeast-2.on.aws/fortuneTell', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
