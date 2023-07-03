@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 16px;
     background-color: #f9f9f9;
 }
@@ -58,6 +58,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-right: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .chat-input button {
@@ -68,6 +69,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .chat-input button:hover {
@@ -114,4 +116,68 @@ body {
 
 #loader {
     font-size: 1rem;
+}
+
+.kakao-ad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    min-width: 350px;
+    min-height: 200px;
+}
+
+.coffee-donation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.coffee-donation a {
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.coffee-donation a:hover {
+    background-color: lightgray;
+}
+
+.coffee-icon {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+#left-botton {
+    margin-right: 30px;
+}
+
+.toss-icon {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 5px;
+    padding: 5px;
+    border: #eaeaea 1px solid;
+}
+
+.kakao-icon {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 5px;
+    padding: 5px;
+    background-color: #FEE500;
+    border: #eaeaea 0.5px solid;
 }
